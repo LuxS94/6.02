@@ -26,5 +26,13 @@ public class ProvaMetodi implements CommandLineRunner {
     public void run(String... args) throws Exception {
         //metodo per cercare per tipo di postazione e città:
         // PS.cercaPerTipoEcitta(Tipo_postazione.SALA_RIUNIONI, "Milano");
+        //Cancellare prenotazione:
+        // PRS.findByIdAndDelete(52);
+//  Cancellare utente:
+//        US.findByUsernameAndDelete("anto1414");
+        //Cancellare postazione:
+        //PS.findByIdAndDelete(52);
+        // Cancellare edificio:
+        //        // ES.findByIdAndDelete(104);
     }
 }

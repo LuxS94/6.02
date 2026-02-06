@@ -3,6 +3,7 @@ package org.example._02.services;
 import org.example._02.entities.Prenotazione;
 import org.example._02.exception.AlreadyReserved;
 import org.example._02.exception.MaxReservations;
+import org.example._02.exception.NotFoundException;
 import org.example._02.repository.PrenotazioneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,16 @@ public class PrenotazioneService {
         }
         this.PR.save(nPrenotazione);
         System.out.println("La prenotazione " + nPrenotazione.getId() + " è stata salvata con successo!");
+    }
+
+    public Prenotazione findById(long id) {
+        return PR.findById(id).orElseThrow(() -> new NotFoundException("Prenotazione non trovata..."));
+    }
+
+    public void findByIdAndDelete(long id) {
+        Prenotazione found = PR.findById(id).orElseThrow(() -> new NotFoundException("Prenotazione non trovata..."));
+        PR.delete(found);
+        System.out.println("Prenotazione eliminata con successo!");
+
     }
 };

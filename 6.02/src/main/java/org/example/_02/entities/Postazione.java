@@ -9,6 +9,7 @@ public class Postazione {
     @GeneratedValue
     private long id;
     private String descrizione;
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Tipo_postazione tipo;
     private int occupantiMax;

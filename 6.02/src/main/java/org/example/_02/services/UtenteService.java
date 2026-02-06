@@ -3,6 +3,7 @@ package org.example._02.services;
 import org.example._02.entities.Utente;
 import org.example._02.exception.AlreadyExist;
 import org.example._02.exception.InvalidLength;
+import org.example._02.exception.NotFoundException;
 import org.example._02.repository.UtenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,5 +32,16 @@ public class UtenteService {
         this.UR.save(nUtente);
         System.out.println("Utente " + nUtente.getUsername() + " salvato correttamente!");
         ;
+    }
+
+    public Utente findByUsername(String username) {
+        return UR.findByUsername(username).orElseThrow(() -> new NotFoundException("Utente non trovato..."));
+    }
+
+    public void findByUsernameAndDelete(String username) {
+        Utente found = UR.findById(username).orElseThrow(() -> new NotFoundException("Utente non trovato..."));
+        UR.delete(found);
+        System.out.println("Utente eliminato con successo!");
+
     }
 }

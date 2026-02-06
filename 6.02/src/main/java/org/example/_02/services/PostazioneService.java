@@ -2,6 +2,7 @@ package org.example._02.services;
 
 import org.example._02.entities.Postazione;
 import org.example._02.entities.Tipo_postazione;
+import org.example._02.exception.NotFoundException;
 import org.example._02.repository.PostazioneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,17 @@ public class PostazioneService {
         List<Postazione> lista = PR.findByTipoAndEdificio_Citta(tipo, citta);
         System.out.println(lista);
         return lista;
+    }
+
+    public Postazione findById(long id) {
+        return PR.findById(id).orElseThrow(() -> new NotFoundException("Postazione non trovata..."));
+    }
+
+    public void findByIdAndDelete(long id) {
+        Postazione found = PR.findById(id).orElseThrow(() -> new NotFoundException("Postazione non trovata..."));
+        PR.delete(found);
+        System.out.println("Postazione eliminata con successo!");
+
     }
 
     ;
