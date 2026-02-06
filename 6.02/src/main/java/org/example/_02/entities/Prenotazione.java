@@ -2,7 +2,7 @@ package org.example._02.entities;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Prenotazioni")
@@ -13,7 +13,7 @@ public class Prenotazione {
     @ManyToOne
     @JoinColumn
     private Utente utente;
-    private Date data;
+    private LocalDate data;
     @OneToOne
     @JoinColumn
     private Postazione postazione;
@@ -23,7 +23,7 @@ public class Prenotazione {
 
     ;
 
-    public Prenotazione(Utente utente, Date data, Postazione postazione) {
+    public Prenotazione(Utente utente, LocalDate data, Postazione postazione) {
         this.id = id;
         this.utente = utente;
         this.data = data;
@@ -43,11 +43,11 @@ public class Prenotazione {
         this.utente = utente;
     }
 
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 

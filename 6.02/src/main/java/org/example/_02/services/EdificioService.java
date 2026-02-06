@@ -1,5 +1,6 @@
 package org.example._02.services;
 
+import org.example._02.entities.Edificio;
 import org.example._02.repository.EdificioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,5 +14,9 @@ public class EdificioService {
         this.ER = ER;
     }
 
+    public void saveEdificio(Edificio edificio) {
+        ER.save(edificio);
+        System.out.println("Edificio " + edificio.getId() + " salvato con successo!");
+    }
 }
 

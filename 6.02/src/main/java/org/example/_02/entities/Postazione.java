@@ -64,4 +64,15 @@ public class Postazione {
     public void setEdificio(Edificio edificio) {
         this.edificio = edificio;
     }
+
+    @Override
+    public String toString() {
+        return "Postazione{" +
+                "id=" + id +
+                ", descrizione='" + descrizione + '\'' +
+                ", tipo=" + tipo +
+                ", occupantiMax=" + occupantiMax +
+                ", edificio=" + edificio +
+                '}';
+    }
 }
