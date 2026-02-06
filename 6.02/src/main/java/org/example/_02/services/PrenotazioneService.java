@@ -1,11 +1,11 @@
-package services;
+package org.example._02.services;
 
 import org.example._02.entities.Prenotazione;
 import org.example._02.exception.AlreadyReserved;
 import org.example._02.exception.MaxReservations;
+import org.example._02.repository.PrenotazioneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.PrenotazioneRepository;
 
 @Service
 public class PrenotazioneService {

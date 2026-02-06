@@ -1,8 +1,8 @@
-package services;
+package org.example._02.services;
 
+import org.example._02.repository.EdificioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.EdificioRepository;
 
 @Service
 public class EdificioService {

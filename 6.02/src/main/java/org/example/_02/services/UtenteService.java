@@ -1,11 +1,11 @@
-package services;
+package org.example._02.services;
 
 import org.example._02.entities.Utente;
 import org.example._02.exception.AlreadyExist;
 import org.example._02.exception.InvalidLength;
+import org.example._02.repository.UtenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.UtenteRepository;
 
 @Service
 public class UtenteService {

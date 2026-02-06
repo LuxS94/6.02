@@ -1,4 +1,4 @@
-package repository;
+package org.example._02.repository;
 
 import org.example._02.entities.Edificio;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,4 +1,4 @@
-package repository;
+package org.example._02.repository;
 
 import org.example._02.entities.Postazione;
 import org.example._02.entities.Tipo_postazione;
@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface PostazioneRepository extends JpaRepository<Postazione, Long> {
-    List<Postazione> findByTipoAndCittà(Tipo_postazione tipo, String citta);
+    List<Postazione> findByTipoAndEdificio_Citta(Tipo_postazione tipo, String citta);
 }
