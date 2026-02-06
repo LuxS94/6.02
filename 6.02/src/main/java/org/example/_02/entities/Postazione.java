@@ -9,6 +9,7 @@ public class Postazione {
     @GeneratedValue
     private long id;
     private String descrizione;
+    @Column(nullable = false)
     private Tipo_postazione tipo;
     private int occupantiMax;
     @ManyToOne

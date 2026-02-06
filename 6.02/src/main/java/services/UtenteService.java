@@ -28,6 +28,8 @@ public class UtenteService {
         if (UR.existsByEmail(nUtente.getEmail())) {
             throw new AlreadyExist("Email già registrata");
         }
+        this.UR.save(nUtente);
+        System.out.println("Utente " + nUtente.getUsername() + " salvato correttamente!");
         ;
     }
 }
