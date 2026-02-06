@@ -1,28 +1,25 @@
 package org.example._02.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Postazioni")
 public class Postazione {
-    @id
+    @Id
     private long id;
     private String descrizione;
     private Tipo_postazione tipo;
     private int occupantiMax;
     @ManyToOne
     @JoinColumn
-    private long edificio;
+    private Edificio edificio;
 
     public Postazione() {
     }
 
     ;
 
-    public Postazione(long id, String descrizione, Tipo_postazione tipo, int occupantiMax, long edificio) {
+    public Postazione(long id, String descrizione, Tipo_postazione tipo, int occupantiMax, Edificio edificio) {
         this.id = id;
         this.descrizione = descrizione;
         this.tipo = tipo;
@@ -54,11 +51,11 @@ public class Postazione {
         this.occupantiMax = occupantiMax;
     }
 
-    public long getEdificio() {
+    public Edificio getEdificio() {
         return edificio;
     }
 
-    public void setEdificio(long edificio) {
+    public void setEdificio(Edificio edificio) {
         this.edificio = edificio;
     }
 }
