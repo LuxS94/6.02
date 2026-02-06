@@ -8,6 +8,7 @@ import java.util.Date;
 @Table(name = "Prenotazioni")
 public class Prenotazione {
     @Id
+    @GeneratedValue
     private long id;
     @ManyToOne
     @JoinColumn
@@ -22,7 +23,7 @@ public class Prenotazione {
 
     ;
 
-    public Prenotazione(long id, Utente utente, Date data, Postazione postazione) {
+    public Prenotazione(Utente utente, Date data, Postazione postazione) {
         this.id = id;
         this.utente = utente;
         this.data = data;

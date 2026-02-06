@@ -1,6 +1,7 @@
 package org.example._02.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -8,6 +9,7 @@ import jakarta.persistence.Table;
 @Table(name = "Edifici")
 public class Edificio {
     @Id
+    @GeneratedValue
     private long id;
     private String nome;
     private String indirizzo;
@@ -18,7 +20,7 @@ public class Edificio {
 
     ;
 
-    public Edificio(long id, String nome, String indirizzo, String citta) {
+    public Edificio(String nome, String indirizzo, String citta) {
         this.id = id;
         this.nome = nome;
         this.indirizzo = indirizzo;

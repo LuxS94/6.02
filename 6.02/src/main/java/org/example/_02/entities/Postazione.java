@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "Postazioni")
 public class Postazione {
     @Id
+    @GeneratedValue
     private long id;
     private String descrizione;
     private Tipo_postazione tipo;
@@ -19,12 +20,16 @@ public class Postazione {
 
     ;
 
-    public Postazione(long id, String descrizione, Tipo_postazione tipo, int occupantiMax, Edificio edificio) {
+    public Postazione(String descrizione, Tipo_postazione tipo, int occupantiMax, Edificio edificio) {
         this.id = id;
         this.descrizione = descrizione;
         this.tipo = tipo;
         this.occupantiMax = occupantiMax;
         this.edificio = edificio;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getDescrizione() {
